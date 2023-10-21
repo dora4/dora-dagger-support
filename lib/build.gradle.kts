@@ -38,7 +38,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.dora4"
                 artifactId = "dora-dagger-support"
-                version = "1.4"
+                version = "1.5"
             }
         }
     }
