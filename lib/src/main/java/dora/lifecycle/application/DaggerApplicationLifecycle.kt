@@ -2,7 +2,7 @@ package dora.lifecycle.application
 
 import android.app.Application
 import android.content.Context
-import dora.dagger.onInjectDaggerComponent
+import dora.dagger.DaggerBaseApplication
 
 class DaggerApplicationLifecycle : ApplicationLifecycleCallbacks {
 
@@ -10,7 +10,9 @@ class DaggerApplicationLifecycle : ApplicationLifecycleCallbacks {
     }
 
     override fun onCreate(application: Application) {
-        application.onInjectDaggerComponent()
+        if (application is DaggerBaseApplication) {
+            application.onInjectDaggerComponent()
+        }
     }
 
     override fun onTerminate(application: Application) {

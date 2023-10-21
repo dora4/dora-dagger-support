@@ -3,12 +3,14 @@ package dora.lifecycle.activity
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import dora.dagger.onInjectDaggerComponent
+import dora.dagger.DaggerBaseActivity
 
 class DaggerActivityLifecycle : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-        activity.onInjectDaggerComponent()
+        if (activity is DaggerBaseActivity<*>) {
+            activity.onInjectDaggerComponent()
+        }
     }
 
     override fun onActivityStarted(activity: Activity) {

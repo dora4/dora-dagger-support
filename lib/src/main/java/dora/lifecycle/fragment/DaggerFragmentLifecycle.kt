@@ -3,7 +3,7 @@ package dora.lifecycle.fragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import dora.dagger.onInjectDaggerComponent
+import dora.dagger.DaggerBaseFragment
 
 class DaggerFragmentLifecycle : FragmentManager.FragmentLifecycleCallbacks() {
 
@@ -12,6 +12,8 @@ class DaggerFragmentLifecycle : FragmentManager.FragmentLifecycleCallbacks() {
         f: Fragment,
         savedInstanceState: Bundle?
     ) {
-        f.onInjectDaggerComponent()
+        if (f is DaggerBaseFragment<*>) {
+            f.onInjectDaggerComponent()
+        }
     }
 }

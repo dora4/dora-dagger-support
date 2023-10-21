@@ -26,7 +26,7 @@ android {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
-    implementation("androidx.fragment:fragment-ktx:1.6.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.github.dora4:dora:1.1.38")
     api("com.google.dagger:dagger:2.28.3")
 }
@@ -38,7 +38,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.dora4"
                 artifactId = "dora-dagger-support"
-                version = "1.7"
+                version = "1.8"
             }
         }
     }
