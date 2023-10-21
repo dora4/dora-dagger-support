@@ -3,7 +3,7 @@ package dora.lifecycle.activity
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import onInjectDaggerComponent
+import dora.dagger.onInjectDaggerComponent
 
 class DaggerActivityLifecycle : Application.ActivityLifecycleCallbacks {
 

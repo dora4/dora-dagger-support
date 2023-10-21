@@ -2,7 +2,7 @@ package dora.lifecycle.application
 
 import android.app.Application
 import android.content.Context
-import onInjectDaggerComponent
+import dora.dagger.onInjectDaggerComponent
 
 class DaggerApplicationLifecycle : ApplicationLifecycleCallbacks {
 
