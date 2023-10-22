@@ -20,7 +20,7 @@ plugins {
 dependencies {
     // 扩展包必须在有主框架dora的情况下使用
     implementation("com.github.dora4:dora:1.1.38")
-    implementation("com.github.dora4:dora-dagger-support:1.8")
+    implementation("com.github.dora4:dora-dagger-support:1.9")
     kapt("com.google.dagger:dagger-compiler:2.15")
 }
 ```
@@ -36,7 +36,7 @@ dependencies {
             android:value="GlobalConfig"/>
 </application>
 ```
-然后重写application、activity和fragment声明周期方法中的onInjectComponent()方法。
+然后继承Dagger开头的基类，并重写application、activity和fragment声明周期方法中的onInjectComponent()方法。
 
 
 

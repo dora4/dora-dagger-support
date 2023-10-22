@@ -7,11 +7,7 @@ import dora.dagger.DaggerBaseFragment
 
 class DaggerFragmentLifecycle : FragmentManager.FragmentLifecycleCallbacks() {
 
-    override fun onFragmentPreCreated(
-        fm: FragmentManager,
-        f: Fragment,
-        savedInstanceState: Bundle?
-    ) {
+    override fun onFragmentCreated(fm: FragmentManager, f: Fragment, savedInstanceState: Bundle?) {
         if (f is DaggerBaseFragment<*>) {
             f.onInjectDaggerComponent()
         }
