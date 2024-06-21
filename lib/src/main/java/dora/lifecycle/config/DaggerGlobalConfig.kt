@@ -12,22 +12,22 @@ import dora.lifecycle.fragment.DaggerFragmentLifecycle
 class DaggerGlobalConfig : GlobalConfig {
 
     override fun injectApplicationLifecycle(
-        context: Context?,
-        lifecycles: MutableList<ApplicationLifecycleCallbacks>?
+        context: Context,
+        lifecycles: MutableList<ApplicationLifecycleCallbacks>
     ) {
-        lifecycles?.add(DaggerApplicationLifecycle())
+        lifecycles.add(DaggerApplicationLifecycle())
     }
 
     override fun injectActivityLifecycle(
-        context: Context?,
-        lifecycles: MutableList<Application.ActivityLifecycleCallbacks>?
+        context: Context,
+        lifecycles: MutableList<Application.ActivityLifecycleCallbacks>
     ) {
-        lifecycles?.add(DaggerActivityLifecycle())
+        lifecycles.add(DaggerActivityLifecycle())
     }
 
     override fun injectFragmentLifecycle(
-        context: Context?,
-        lifecycles: MutableList<FragmentManager.FragmentLifecycleCallbacks>?
+        context: Context,
+        lifecycles: MutableList<FragmentManager.FragmentLifecycleCallbacks>
     ) {
         /**
          * 根据官方源码的说法，按理说应该在这里注入依赖，但是实际测试的结果是注入失败。Dagger依赖注入到Fragment目前
@@ -35,6 +35,6 @@ class DaggerGlobalConfig : GlobalConfig {
          *
          * @see FragmentManager.FragmentLifecycleCallbacks.onFragmentPreCreated
          */
-//        lifecycles?.add(DaggerFragmentLifecycle())
+        lifecycles.add(DaggerFragmentLifecycle())
     }
 }
