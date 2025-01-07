@@ -19,7 +19,8 @@ plugins {
 }
 dependencies {
     // 扩展包必须在有主框架dora的情况下使用
-    implementation("com.github.dora4:dora:1.2.33")
+    implementation("com.github.dora4:dora:1.2.36
+")
     implementation("com.github.dora4:dora-dagger-support:1.12")
     kapt("com.google.dagger:dagger-compiler:2.16")
 }
