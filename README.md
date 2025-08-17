@@ -21,7 +21,7 @@ dependencies {
     // 扩展包必须在有主框架dora的情况下使用
     implementation("com.github.dora4:dora:1.3.14")
     implementation("com.github.dora4:dora-dagger-support:1.12")
-    kapt("com.google.dagger:dagger-compiler:2.16")
+    kapt("com.google.dagger:dagger-compiler:2.17")
 }
 ```
 
