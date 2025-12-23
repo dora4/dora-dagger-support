@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "dora.lifecycle.dagger"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 21
@@ -25,9 +25,9 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.github.dora4:dora:1.3.14")
-    api("com.google.dagger:dagger:2.28.3")
+    implementation("androidx.appcompat:appcompat:1.7.1")
+    implementation("com.github.dora4:dora:1.3.53")
+    api("com.google.dagger:dagger:2.57.2")
 }
 
 afterEvaluate {
@@ -37,7 +37,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.dora4"
                 artifactId = "dora-dagger-support"
-                version = "1.13"
+                version = "1.14"
             }
         }
     }
